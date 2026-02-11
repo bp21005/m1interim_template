@@ -16,7 +16,7 @@
 - 本文: 10pt、2段組（段間 6mm）
 - 余白: 上 20mm、下 25mm、左右 20mm
 - 欧文フォント: Times New Roman
-- 和文フォント: MS 明朝（本文）/ MS ゴシック（見出し）
+- 和文フォント: MS 明朝（本文）/ MS ゴシック（見出し）※クラスオプションで変更可
 - ページ番号なし
 
 ## 予稿の構成
@@ -61,8 +61,26 @@ lualatex main.tex
 lualatex main.tex
 ```
 
+## フォントオプション
+
+デフォルトでは MS 明朝/MS ゴシックを使用しますが、クラスオプションでフォントプリセットを切り替えられます。
+
+```latex
+\documentclass[haranoaji]{m1interim}  % 原ノ味フォント（TeX Live 同梱）
+```
+
+| オプション | フォント | 備考 |
+|-----------|---------|------|
+| （なし） | MS 明朝 / MS ゴシック | **デフォルト**。Windows 環境向け |
+| `haranoaji` | 原ノ味明朝 / 原ノ味ゴシック | TeX Live 同梱。最もポータブル |
+| `hiragino-pron` | ヒラギノ明朝 ProN / ヒラギノ角ゴ ProN | macOS 標準 |
+| `ipaex` | IPAex 明朝 / IPAex ゴシック | フリー、クロスプラットフォーム |
+| `noto-jp` | Noto Serif JP / Noto Sans JP | Google Noto CJK |
+
+MS フォントがない環境（macOS、Linux など）では `haranoaji` を推奨します。
+
 ## 注意事項
 
 - **LuaLaTeX** が必須です（pLaTeX / upLaTeX では動作しません）
-- MS 明朝・MS ゴシックがシステムにインストールされている必要があります
+- フォントオプション未指定時は MS 明朝・MS ゴシックがシステムにインストールされている必要があります
 - 参考文献スタイルは `unsrt`（引用順）です
