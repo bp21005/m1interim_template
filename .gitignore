@@ -1,0 +1,16 @@
+## LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+
+## Output
+*.pdf
+
+## macOS
+.DS_Store
